@@ -6,8 +6,8 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 const items2: MenuProps['items'] = [{
-    key: "users",
-    label: "Users",
+    key: `users`,
+    label: `Users`,
 
     children: [{
         key: 0,

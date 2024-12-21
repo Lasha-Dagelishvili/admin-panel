@@ -33,7 +33,6 @@ export const registerUser = async (
       email: data.user?.email ?? "",
     };
   };
-
   
 export const loginUser = async (credentials: LoginCredentials): Promise<LoginResponse> => {
     const { data, error } = await supabase.auth.signInWithPassword({

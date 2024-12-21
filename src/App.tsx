@@ -2,8 +2,10 @@ import { Routes, Route} from 'react-router-dom'
 import './App.css'
 import AdminLayout from './layouts/admin-layout'
 import SignInPage from './pages/signIn/signIn-page';
-import TestView from '@/pages/test/index';
 import SignUpPage from './pages/signUp/signUp-page';
+import UsersListView from './pages/test/admin-pages/users/views/list';
+import UsersCreateView from './pages/test/admin-pages/users/views/create';
+import UsersUpdateView from './pages/test/admin-pages/users/views/update';
 // import { useEffect } from 'react';
 // import { supabase } from './supabase';
 // import { useAuthContext } from './context/auth/hooks/useAuthContext';
@@ -33,13 +35,11 @@ function App() {
               <AdminLayout />
             }
             >
-              <Route 
-                path='test'
-                element={
-                  <TestView />
-                }
-                />
+          <Route path='test' element={<UsersListView />} />
+          <Route path='test/create' element={<UsersCreateView />} />
+          <Route path='test/update:id' element={<UsersUpdateView />} />
       </Route>
+
       <Route path="/SignIn" element={<SignInPage />} />
       <Route path="/SignUp" element={<SignUpPage />} />
     </Routes>

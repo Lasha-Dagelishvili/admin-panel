@@ -1,9 +1,9 @@
 import { supabase } from "@/supabase";
 
 export const getUsersListInAdmin = async () => {
-  return supabase.auth.admin.listUsers().then((res) => {
-    return res.data.users as User[];
-  });
+    return supabase.auth.admin.listUsers().then((res) => {
+      return res.data.users as User[];
+    });
 };
 
 export const updateUserInAdmin = (
@@ -24,6 +24,7 @@ export type User = {
     aud: string;
     role: string;
     email: string;
+    confirmation_sent_at: string; 
     email_confirmed_at: string;
     phone: string;
     confirmed_at: string;
